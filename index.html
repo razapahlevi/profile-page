@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="./src/output.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: 'Playfair', serif;
+      }
+
+      .gradient-text {
+        background: linear-gradient(135deg, #ec4899, #8b5cf6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .card-hover {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(236, 72, 153, 0.2);
+      }
+
+      .floating {
+        animation: floating 3s ease-in-out infinite;
+      }
+
+      @keyframes floating {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .fade-in {
+        animation: fadeIn 0.8s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -6px;
+        top: 0;
+        width: 12px;
+        height: 12px;
+        background: #ec4899;
+        border-radius: 50%;
+        border: 3px solid white;
+      }
+    </style>
+  </head>
+  <body class="bg-linear-to-br from-pink-50 via-purple-50 to-blue-50">
+    <!-- Navigation -->
+    <nav class="w-full top-0 fixed z-50 bg-white backdrop-blur-lg shadow-lg">
+      <div class="container mx-auto px-8 py-4">
+        <div class="flex justify-between items-center">
+          <h1 class="text-3xl font-bold gradient-text">Sullyoon</h1>
+          <ul class="hidden md:flex gap-8 text-slate-800 font-medium">
+            <li><a href="#home" class="transition-colors duration-200 hover:text-pink-600">Home</a></li>
+            <li><a href="#about" class="transition-colors duration-200 hover:text-pink-600">About</a></li>
+            <li><a href="#carrer" class="transition-colors duration-200 hover:text-pink-600">Carrer</a></li>
+            <li><a href="#skills" class="transition-colors duration-200 hover:text-pink-600">Skills</a></li>
+            <li><a href="#achievements" class="transition-colors duration-200 hover:text-pink-600">Achievements</a></li>
+            <li><a href="#gallery" class="transition-colors duration-200 hover:text-pink-600">Gallery</a></li>
+            <li><a href="#contact" class="transition-colors duration-200 hover:text-pink-600">Contact</a></li>
+          </ul>
+          <button class="md:hidden text-pink-500">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-6">
+      <div class="container max-w-[1200px] mx-auto px-8">
+        <div class="flex flex-col lg:flex-row items-center gap12">
+          <div class="lg:w-1/2 floating relative">
+            <div class="absolute inset-0 bg-linear-to-br from-pink-500 to-purple-500 rounded-full blur-3xl opacity-30 -z-10"></div>
+            <div class="w-80 h-80 mx-auto rounded-full bg-linear-to-br from-pink-200 to-pink-200 ring-4 ring-pink-300 ring-offset-4 ring-offset-pink-300 overflow-hidden flex items-center justify-center">
+              <img src="../dist/images/1.jpg" alt="Sullyoon" class="w-full h-full object-cover" />
+            </div>
+          </div>
+
+          <div class="lg:w-1/2 fade-in">
+            <p class="text-pink-600 mt-6 text-lg uppercase tracking-widest font-semibold mb-3">Nmixx Member</p>
+            <h2 class="text-6xl font-bold mb-4 text-slate-900">Sullyoon</h2>
+            <p class="text-xl text-gray-600 mb-6 leading-relaxed">설윤아 (Seol Yoon-a)</p>
+            <p class="text-slate-700 mb-8 leading-relaxed text-lg">
+              Seorang visual legendaris yang sering disamakan dengan karakter fairy-tale. Sullyoon membawa kekuatan vokal yang jernih dan stabil ke dalam dunia K-Pop modern dengan aura yang lembut dan penampilan yang memesona.
+            </p>
+            <div class="flex gap-4">
+              <button class="px-8 py-3 text-white font-semibold bg-linear-to-r from-pink-500 to-purple-500 rounded-full shadow-lg transition-all hover:scale-105 hover:shadow-xl">Follow Sullyoon</button>
+              <button class="px-8 py-3 rounded-full shadow-lg border-2 border-pink-500 text-pink-500 font-semibold hover:bg-pink-50 transition-all">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Fast -->
+    <section class="py-16 px-6 bg-white/60 backdrop-blur-md">
+      <div class="container mx-auto">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="text-center card-hover p-6 bg-white rounded-xl shadow-lg">
+            <span class="text-4xl block mb-3">🎂</span>
+            <h4 class="font-bold text-slate-800 mb-2">Tanggal Lahir</h4>
+            <p class="text-slate-600">26 Januari 2004</p>
+          </div>
+          <div class="text-center card-hover p-6 bg-white rounded-xl shadow-lg">
+            <span class="text-4xl block mb-3">📍</span>
+            <h4 class="font-bold text-slate-800 mb-2">Asal</h4>
+            <p class="text-slate-600">Daejeon, Korea Selatan</p>
+          </div>
+          <div class="text-center card-hover p-6 bg-white rounded-xl shadow-lg">
+            <span class="text-4xl block mb-3">📏</span>
+            <h4 class="font-bold text-slate-800 mb-2">Tinggi</h4>
+            <p class="text-slate-600">168 cm</p>
+          </div>
+          <div class="text-center card-hover p-6 bg-white rounded-xl shadow-lg">
+            <span class="text-4xl block mb-3">⭐</span>
+            <h4 class="font-bold text-slate-800 mb-2">Zodiak</h4>
+            <p class="text-slate-600">Aquarius</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-5xl font-bold text-center mb-10 gradient-text">About Sullyoon</h2>
+        <div class="bg-white rounded-xl shadow-lg p-10 mb-8">
+          <p class="text-slate-700 leading-relaxed text-lg mb-6 text-justify">
+            <span class="font-bold text-pink-600">Seol Yoon-a (Sullyoon)</span> adalah member NMIXX yang dikenal sebagai trainee legendaris. Lahir di Daejeon, Korea Selatan, ia menjadi terkenal bahkan sebelum debut karena berhasil lolos
+            audisi di tiga agensi terbesar Korea (JYP, SM, dan YG).
+          </p>
+          <p class="text-slate-700 leading-relaxed text-lg mb-6 text-justify">
+            Pada tahun 2020, Sullyoon membuat keputusan untuk bergabung dengan JYP Entertainment sebagai trainee. Setelah sekitar dua tahun masa pelatihan, ia debut sebagai member NMIXX pada Februari 2022, dengan cepat memikat penggemar
+            berkat visualnya yang menawan dan kemampuan vokal kuatnya yang stabil.
+          </p>
+          <blockquote class="px-2 text-slate-600 text-base italic border-l-4 border-pink-600">"Singing is how I share the emotions deep in my heart. Setiap melodi adalah pesan yang tulus." — Sullyoon</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carrer Timeline -->
+    <section id="carrer" class="py-20 px-6 bg-white/60 backdrop-blur-md">
+      <div class="container mx-auto max-w-4xl">
+        <h3 class="gradient-text text-5xl text-center mb-12 font-bold">Carrer Journey</h3>
+
+        <div class="relative border-l-4 border-pink-300 ml-6">
+          <div class="mb-10 ml-6 relative timeline-item bg-white rounded-2xl shadow-lg p-6 card-hover">
+            <span class="text-pink-600 font-bold text-sm">2020</span>
+            <h4 class="mt-1 mb-2 font-bold text-xl text-slate-900">Lolos audisi "Big 3"</h4>
+            <p class="text-slate-600 text-base">Menjadi trainee legendaris yang berhasil lolos audisi JYP, SM, dan YG.</p>
+          </div>
+
+          <div class="mb-10 ml-6 relative timeline-item bg-white rounded-2xl shadow-lg p-6 card-hover">
+            <span class="text-pink-600 font-bold text-sm">2020</span>
+            <h4 class="mt-1 mb-2 font-bold text-xl text-slate-900">Bergabung dengan JYP</h4>
+            <p class="text-slate-600 text-base">Memutuskan untuk bergabung dengan JYP Entertainment dan memulai masa pelatihannya.</p>
+          </div>
+
+          <div class="mb-10 ml-6 relative timeline-item bg-white rounded-2xl shadow-lg p-6 card-hover">
+            <span class="text-pink-600 font-bold text-sm">2022</span>
+            <h4 class="mt-1 mb-2 font-bold text-xl text-slate-900">Debut dengan Nmixx</h4>
+            <p class="text-slate-600 text-base">Debut resmi dengan single album "AD MARE" dan lagu utama "O.O".</p>
+          </div>
+
+          <div class="mb-10 ml-6 relative timeline-item bg-white rounded-2xl shadow-lg p-6 card-hover">
+            <span class="text-pink-600 font-bold text-sm">2023</span>
+            <h4 class="mt-1 mb-2 font-bold text-xl text-slate-900">Menjadi MC Music Core</h4>
+            <p class="text-slate-600 text-base">Terpilih sebagai salah satu pembawa acara tetap untuk program musik mingguan populer.</p>
+          </div>
+
+          <div class="mb-10 ml-6 relative timeline-item bg-linear-to-brrom-pink-500 to-purple-500 rounded-2xl shadow-lg p-6 card-hover">
+            <span class="text-white font-bold text-sm">2023</span>
+            <h4 class="mt-1 mb-2 font-bold text-xl text-white">Menjadi MC Music Core</h4>
+            <p class="text-white text-base">Terpilih sebagai salah satu pembawa acara tetap untuk program musik mingguan populer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skill Section -->
+    <section id="skills" class="py-20 px-6">
+      <div class="container mx-auto max-w-5xl">
+        <h3 class="text-5xl mb-12 text-center font-bold gradient-text">Skills & Talents</h3>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white rounded-xl shadow-xl p-8 card-hover">
+            <div class="flex items-center mb-4">
+              <span class="text-4xl mr-4">🎤</span>
+              <h4 class="text-2xl font-bold text-slate-800">Vokal</h4>
+            </div>
+            <p class="text-slate-600 mb-4">Dikenal dengan vokal live yang sangat jernih dan kuat, mampu mencapai nada tinggi dengan stabil bahkan saat menari.</p>
+            <div class="bg-gray-200 rounded-full h-3 overflow-hidden">
+              <div class="bg-linear-to-r from-pink-500 to bg-purple-500 h-full rounded-full w-[95%]"></div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-xl p-8 card-hover">
+            <div class="flex items-center mb-4">
+              <span class="text-4xl mr-4">✨</span>
+              <h4 class="text-2xl font-bold text-slate-800">Visual &</h4>
+            </div>
+            <p class="mb-4 text-slate-600">Diakui sebagai salah satu visual top generasinya dengan aura "fairy-tale" yang murni dan mempesona.</p>
+            <div class="bg-gray-200 rounded-full h-3 overflow-hidden">
+              <div class="bg-linear-to-rrom-pink-500 to bg-purple-500 h-full rounded-full w-[95%]"></div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-xl p-8 card-hover">
+            <div class="flex items-center mb-4">
+              <span class="text-4xl mr-4">💃</span>
+              <h4 class="text-2xl font-bold text-slate-800">Dance Performance</h4>
+            </div>
+            <p class="mb-4 text-slate-600">Memiliki kemampuan menari yang solid dan luwes, mengeksekusi koreografi <span class="font-bold text-pink-600">NMIXX</span> yang kompleks dengan presisi.</p>
+            <div class="bg-gray-200 rounded-full h-3 overflow-hidden">
+              <div class="bg-linear-to-r from-pink-500 to bg-purple-500 h-full rounded-full w-[95%]"></div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-xl p-8 card-hover">
+            <div class="flex items-center mb-4">
+              <span class="text-4xl mr-4">📺</span>
+              <h4 class="text-2xl font-bold text-slate-800">Host (MC)</h4>
+            </div>
+            <p class="mb-4 text-slate-600">Menunjukkan bakat sebagai pembawa acara (MC Music Core) dengan pembawaan yang tenang manis dan profesional.</p>
+            <div class="bg-gray-200 rounded-full h-3 overflow-hidden">
+              <div class="bg-linear-to-rrom-pink-500 to bg-purple-500 h-full rounded-full w-[95%]"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements" class="py-20 px-6 bg-white/60 backdrop-blur-md">
+      <div class="container mx-auto max-w-5xl">
+        <h3 class="gradient-text text-5xl font-bold text-center mb-12">Achievements</h3>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-linear-to-br from-pink-500 to bg-purple-500 rounded-2xl shadow-lg card-hover p-8 text-white text-center">
+            <span class="block text-5xl mb-4">🏆</span>
+            <h4 class="text-3xl font-bold mb-2">10+</h4>
+            <p class="text-pink-100">Music Show Wins</p>
+          </div>
+
+          <div class="bg-linear-to-br from-blue-500 to bg-pink-500 rounded-2xl shadow-lg card-hover p-8 text-white text-center">
+            <span class="block text-5xl mb-4">🏆</span>
+            <h4 class="text-3xl font-bold mb-2">10+</h4>
+            <p class="text-pink-100">Music Show Wins</p>
+          </div>
+
+          <div class="bg-linear-to-brrom-pink-500 via-blue-400 to bg-purple-500 rounded-2xl shadow-lg card-hover p-8 text-white text-center">
+            <span class="block text-5xl mb-4">🏆</span>
+            <h4 class="text-3xl font-bold mb-2">10+</h4>
+            <p class="text-pink-100">Music Show Wins</p>
+          </div>
+        </div>
+
+        <div class="mt-12 bg-white shadow-xl rounded-2xl p-8 w-full">
+          <h4 class="text-2xl font-bold text-center text-slate-800 mb-6">Notable Recognitions</h4>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <span class="text-xl mr-3">✨</span>
+              <div>
+                <p class="font-semibold text-slate-800">Favorite New Artist</p>
+                <p class="text-slate-600 text-sm">Pemenang MAMA Awards 2022</p>
+              </div>
+            </li>
+
+            <li class="flex items-start">
+              <span class="text-xl mr-3">✨</span>
+              <div>
+                <p class="font-semibold text-slate-800">Music Core MC</p>
+                <p class="text-slate-600 text-sm">Pembawa acara tetap acara musik</p>
+              </div>
+            </li>
+
+            <li class="flex items-start">
+              <span class="text-xl mr-3">✨</span>
+              <div>
+                <p class="font-semibold text-slate-800">Top-Tier Vocalist</p>
+                <p class="text-slate-600 text-sm">Diakui untuk vokal live yang stabil</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Personality & Favorites -->
+    <section class="py-20 px-6">
+      <div class="container mx-auto max-w-5xl">
+        <h3 class="text-5xl gradient-text text-center font-bold mb-12">Get to Know Sullyoon</h3>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl shadow-lg p-8">
+          <h4 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">💖 Personality</h4>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-center"><span class="text-pink-500 font-bold mr-4">•</span>Manis dan lembut</li>
+            <li class="flex items-center"><span class="text-pink-500 font-bold mr-4">•</span>Pekerja keras dan teliti</li>
+            <li class="flex items-center"><span class="text-pink-500 font-bold mr-4">•</span>Ramah dan perhatian</li>
+            <li class="flex items-center"><span class="text-pink-500 font-bold mr-4">•</span>Polite</li>
+            <li class="flex items-center"><span class="text-pink-500 font-bold mr-4">•</span>Artistik dan suka menggambar</li>
+          </ul>
+        </div>
+
+        <div class="bg-white shadow-xl rounded-xl p-8">
+          <h4 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">✨ Favorites</h4>
+          <div class="space-y-4">
+            <div>
+              <p class="text-pink-500 font-semibold">Warna:</p>
+              <p class="text-slate-700">Pink</p>
+            </div>
+            <div>
+              <p class="text-pink-500 font-semibold">Makanan:</p>
+              <p class="text-slate-700">Tteokbokki, Choco Mint, Roti</p>
+            </div>
+            <div>
+              <p class="text-pink-500 font-semibold">Hobi:</p>
+              <p class="text-slate-700">Menggambar, Baking</p>
+            </div>
+            <div>
+              <p class="text-pink-500 font-semibold mb-1">Motto:</p>
+              <p class="text-slate-700 italic border-l-4 border-purple-600 px-2">"Let's do our best today too"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 px-6 bg-white/60 backdrop-blur-md">
+      <div class="container mx-auto max-w-5xl">
+        <h3 class="text-5xl text-center mb-10 font-bold gradient-text">Photo Gallery</h3>
+
+        <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-6">
+          <img src="../dist/images/1.jpg" alt="Sullyoon Pict" class="rounded-lg object-cover card-hover" />
+          <img src="../dist/images/2.jpg" alt="Sullyoon Pict" class="rounded-lg object-cover card-hover" />
+          <img src="../dist/images/3.jpg" alt="Sullyoon Pict" class="rounded-lg object-cover card-hover" />
+          <img src="../dist/images/4.jpg" alt="Sullyoon Pict" class="rounded-lg object-cover card-hover" />
+          <img src="../dist/images/5.jpg" alt="Sullyoon Pict" class="rounded-lg object-cover card-hover" />
+          <img src="../dist/images/6.jpg" alt="Sullyoon Pict" class="rounded-lg object-cover card-hover" />
+          <img src="../dist/images/7.jpg" alt="Sullyoon Pict" class="rounded-lg object-cover card-hover" />
+          <img src="../dist/images/8.jpg" alt="Sullyoon Pict" class="rounded-lg object-cover card-hover" />
+          <img src="../dist/images/9.jpg" alt="Sullyoon Pict" class="rounded-lg object-cover card-hover" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-6 bg-linear-to-br from-pink-500 to bg-purple-700">
+      <div class="container mx-auto max-w-3xl text-center text-white">
+        <h3 class="text-5xl font-bold mb-6">Stay Connected</h3>
+        <p class="text-base text-pink-100 mb-6">Ikuti perjalanan Sullyoon dan dapatkan update terbaru</p>
+
+        <div class="flex justify-center gap-6 mb-10">
+          <a href="#" class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-3xl hover:bg-white/40 transition-all hover:scale-110">💖</a>
+          <a href="#" class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-3xl hover:bg-white/40 transition-all hover:scale-110">✨</a>
+          <a href="#" class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-3xl hover:bg-white/40 transition-all hover:scale-110">💃</a>
+          <a href="#" class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-3xl hover:bg-white/40 transition-all hover:scale-110">🎵</a>
+        </div>
+
+        <button class="px-10 py-4 bg-white text-pink-600 rounded-full shadow-xl font-bold text-lg hover:scale-110 hover:shadow-2xl transition-all">Join the Fandom</button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="p-8 bg-gray-900 text-center text-slate-400">
+      <p class="mb-2 text-base">©️ 2025 Sullyoon Fandom Page</p>
+      <p class="text-sm">Created with 💖 by Levi GoodmaN</p>
+    </footer>
+  </body>
+</html>
